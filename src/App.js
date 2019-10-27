@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 
+// Components
+import TodayList from "./Components/TodayList";
+
 class App extends Component {
   state = {
     tasks: [
@@ -16,12 +19,11 @@ class App extends Component {
   };
 
   render() {
-    let tasks_list = this.state.tasks.map(task => (
-      <p>
-        {task.title} - {task.details}
-      </p>
-    ));
-    return <div className="App">{tasks_list}</div>;
+    return (
+      <div className="App">
+        <TodayList tasks={this.state.tasks} />
+      </div>
+    );
   }
 }
 
