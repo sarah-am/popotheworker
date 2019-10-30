@@ -5,6 +5,7 @@ import moment from "moment";
 // Components
 import TodayList from "./Components/TodayList";
 import CreateTaskForm from "./Components/CreateTaskForm";
+import FutureList from "./Components/FutureList";
 
 class App extends Component {
   state = {
