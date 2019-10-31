@@ -1,17 +1,19 @@
 import React, { Component } from "react";
-
+import tasksStore from "../Stores/TasksStore";
+import { observer } from "mobx-react";
 import Task from "./Task";
+import { MDBListGroup } from "mdbreact";
 
 class TodayList extends Component {
   render() {
-    let tasks = this.props.tasks.map(task => <Task task={task} />);
+    let tasks = tasksStore.todayTasks.map(task => <Task task={task} />);
     return (
       <div>
         <h3>Today</h3>
-        {tasks}
+        <MDBListGroup>{tasks}</MDBListGroup>
       </div>
     );
   }
 }
 
-export default TodayList;
+export default observer(TodayList);
